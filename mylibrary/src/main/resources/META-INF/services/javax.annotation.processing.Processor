@@ -1,1 +1,3 @@
 com.example.mylibrary.MyAbstractProcessor
+com.example.mylibrary.MyBindViewProcessor
+com.example.mylibrary.ASTProcessor
