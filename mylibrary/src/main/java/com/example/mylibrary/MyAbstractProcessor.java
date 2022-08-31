@@ -52,9 +52,12 @@ public class MyAbstractProcessor extends AbstractProcessor {
         for (Element  s : set1) {
             if (s.getKind() == ElementKind.METHOD) {
                 mMessager.printMessage(Diagnostic.Kind.NOTE,"namebefore="+s.getSimpleName());
-                JCTree tree = (JCTree) mtrees.getTree(s);
-                TreeTranslator visitor = new Inliner();
-                tree.accept(visitor);
+                JCTree.JCMethodDecl tree = (JCTree.JCMethodDecl) mtrees.getTree(s);
+                Context context = new Context();
+                Names names = new Names(context);
+                tree.name = names.fromString("getcapture");
+//                TreeTranslator visitor = new Inliner();
+//                tree.accept(visitor);
                 mMessager.printMessage(Diagnostic.Kind.NOTE,"name aftore="+((JCTree.JCMethodDecl)tree).getName().toString()+"   "+tree.hashCode());
             }
         }
