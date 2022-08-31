@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,9 +16,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Studeng b = new Studeng.Builder().setAge(5).setName("hehe").build();
+//        new com.example.myapplication.MainActivityInjector().bind(this);
+//        mTx.setText("hehe  "+b.getName()+"  "+b.getchange());
+    }
 
-        new com.example.myapplication.MainActivityInjector().bind(this);
+    protected void onResume() {
+        super.onResume();
+        Studeng b = new Studeng.Builder().setAge(5).setName("hehe").build();
         mTx.setText("hehe  "+b.getName()+"  "+b.getchange());
     }
 

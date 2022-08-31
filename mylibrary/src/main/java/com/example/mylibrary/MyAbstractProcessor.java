@@ -44,7 +44,8 @@ public class MyAbstractProcessor extends AbstractProcessor {
         mFilerUtil = processingEnv.getFiler();
         mtrees = Trees.instance(processingEnv);
         mMaker = TreeMaker.instance(((JavacProcessingEnvironment)processingEnv).getContext());
-        mMessager.printMessage(Diagnostic.Kind.NOTE,"zhangpanpanpan");
+        mMessager.printMessage(Diagnostic.Kind.NOTE,"hehepanpan");
+
     }
     @Override
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
